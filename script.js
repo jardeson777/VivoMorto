@@ -1,14 +1,27 @@
-var contador = 0;
-
+var indice = 0; //Para saber qual imagem que vai ser usada
+var cont = 0;
 var todasImagens = ["./image/abaixado2.png", "./image/levantado2.jpg"];
 
 function trocaImagem() {
-    document.getElementById('imagem').src = todasImagens[contador];
+    document.getElementById('imagem').src = todasImagens[indice];
 
-    if(contador < 1) {
-        contador++;
+    if(indice < 1) {
+        indice++;
     } else {
-        contador = 0;
+        indice = 0;
     }
-    setTimeout("trocaImagem()",95);
+    cont++;
+    console.log(cont);
+}
+
+function paraLoop() {
+    if(cont >=7) {
+        clearInterval(loop);
+        cont = 0;
+    }
+    setTimeout("paraLoop()", 400);
+}
+
+function iniciar() {
+    loop = setInterval(trocaImagem, 100); //Onde acontece a troca de imagem a cada tempo
 }
