@@ -1,15 +1,14 @@
 var contador = 0;
 
-function trocaImagem(){
-    document.getElementById("abaixado").style.display = "none";
-    document.getElementById("levantado").style.display = "flex";
+var todasImagens = ["./image/abaixado2.png", "./image/levantado2.jpg"];
 
-    var troca = setTimeout(function altera() {
-        document.getElementById("levantado").style.display = "none";
-        document.getElementById("abaixado").style.display = "flex";
-    }, 400);
-    window.setInterval('trocaImagem()', 800); 
-    
-    contador++;
-    console.log(contador);
+function trocaImagem() {
+    document.getElementById('imagem').src = todasImagens[contador];
+
+    if(contador < 1) {
+        contador++;
+    } else {
+        contador = 0;
+    }
+    setTimeout("trocaImagem()",95);
 }
