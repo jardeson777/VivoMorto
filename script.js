@@ -21,15 +21,25 @@ function trocaImagem() {
 }
 
 function iniciar() {
-    if(resposta == indice | resposta == 2) {
+    document.getElementById("comeca").style.display = "none";
+    if(resposta == indice | resposta == 2) { //Se tiver acertado
         score++;
         document.getElementById("score").innerHTML = "score: " + score;
+
         iniciaLoop = setInterval(trocaImagem, 113); //Onde acontece a troca de imagem a cada tempo
+
         document.getElementById("msgErro").innerHTML = "";
-    } else {
+
+        document.getElementById("perdeu").style.display = "none";
+    } else { //Se errou
         document.getElementById("msgErro").innerHTML = "Você perdeu!</br>Sua pontuação foi: " + score;
         score = 0;
         document.getElementById("score").innerHTML = "score: " + score;
+
+        document.getElementById("perdeu").style.display = "block";
+
+        document.getElementById("vivo").disabled = true;
+        document.getElementById("morto").disabled = true;
     }
 }
 
@@ -61,11 +71,10 @@ function respostaMorto() {
     iniciar();
 }
 
-function analisarResposta() {
-    if(resposta == indice) {
-        setTimeout("iniciar()", 1100);
-    } else {
-        clearInterval(iniciaLoop);
-        clearTimeout(paraLoop);
-    }
+function jogarNovamente() {
+    iniciar();
+    document.getElementById("perdeu").style.display = "none";
+
+    document.getElementById("vivo").disabled = false;
+    document.getElementById("morto").disabled = false;
 }
