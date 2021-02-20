@@ -3,11 +3,12 @@
 }
 
 body {
-    width: 98vw;
+    width: 97vw;
     max-width: 900px;
     margin: 0 auto;
-    /* border: 1px rgb(255, 255, 255) solid; */
-    background-color: white;
+    background-color: rgb(255, 251, 0);
+    background-image: linear-gradient(rgb(255, 145, 0), rgb(255, 251, 0));
+    background-repeat: no-repeat;
     color: white;
 }
 
@@ -21,7 +22,7 @@ header{
 #imagens{
     display: flex;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.205);
+    background-color: rgba(0, 0, 0, 0.080);
     border-radius: 20px;
     max-width: 400px;
     margin: 0 auto;
@@ -30,6 +31,13 @@ header{
 img{
     width: 50%;
     max-width: 200px;
+}
+
+#perdeu{
+    display: flex;
+}
+#msgErro{
+    color: black;
 }
 
 #button, #comeca{
