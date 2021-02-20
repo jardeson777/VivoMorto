@@ -7,20 +7,21 @@ body {
     max-width: 900px;
     margin: 0 auto;
     /* border: 1px rgb(255, 255, 255) solid; */
-    background-color: rgba(0, 0, 0, 0.966);
+    background-color: white;
     color: white;
 }
 
 header{
     display: flex;
     justify-content: center;
+    color: black;
 }
 
 
 #imagens{
     display: flex;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.596);
+    background-color: rgba(0, 0, 0, 0.205);
     border-radius: 20px;
     max-width: 400px;
     margin: 0 auto;
@@ -42,12 +43,14 @@ button{
     height: 40px;
     margin: 5px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     outline: none;
 }
 
 #vivo{
     background-color: rgb(25, 196, 20);
+    border-bottom: green solid 2.5px;
+    border-right: green solid 4px;
     color: white;
     font-weight: 900;
     font-size: 18px;
@@ -59,6 +62,8 @@ button{
 
 #morto{
     background-color: rgb(209, 10, 10);
+    border-bottom: rgb(128, 0, 0) solid 2.5px;
+    border-right: rgb(128, 0, 0) solid 4px;
     color: white;
     font-weight: 900;
     font-size: 18px;

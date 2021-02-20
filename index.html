@@ -11,7 +11,7 @@
 
     <body onload="paraLoop()">
         <header id="topo">
-            <h1>Vivo ou Morto</h1>
+            <h1 id="score"></h1>
         </header>
 
         <div id="conteudo">
@@ -21,12 +21,12 @@
             <br>
 
             <div id="comeca"> 
-                <button onclick="iniciar()" >Começar</button>
+                <button onclick="iniciar()">Começar</button>
             </div>
 
             <div id="button">
-                <button id="vivo">Vivo</button>
-                <button id="morto">Morto</button>
+                <button id="vivo" onclick="respostaVivo()">Vivo</button>
+                <button id="morto" onclick="respostaMorto()">Morto</button>
             </div>
         </div>
     </body>
