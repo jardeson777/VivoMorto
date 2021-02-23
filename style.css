@@ -1,15 +1,21 @@
+@keyframes tempo{
+    from{width: 100%;}
+    to{width: 0%;}
+}
+
 *{
     font-family: 'Courier New', Courier, monospace;
 }
 
 body {
     width: 97vw;
-    max-width: 900px;
+    max-width: 400px;
     margin: 0 auto;
     background-color: rgb(255, 251, 0);
     background-image: linear-gradient(rgb(255, 145, 0), rgb(255, 251, 0));
     background-repeat: no-repeat;
     color: white;
+    
 }
 
 header{
@@ -17,7 +23,6 @@ header{
     justify-content: center;
     color: black;
 }
-
 
 #imagens{
     display: flex;
@@ -28,21 +33,34 @@ header{
     margin: 0 auto;
 }
 
+#temporizador{
+    display: none;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    height: 2px;
+    background-color: rgb(255, 238, 0);
+    animation: tempo;
+    animation-duration: 2.5s;
+}
+
 img{
     width: 50%;
-    max-width: 200px;
+    max-width: 450px;
 }
 
 #perdeu{
     display: none;
     width: 96vw;
-    max-width: 425px;
-    height: 70%;
+    max-width: 400px;
+    height: 70vh;
+    max-height: 800px;
     position: absolute;
-    left: 50%;
-    margin-left: -48vw;
-    top: 19%;
-    margin-top: -35px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
     text-align: center;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
@@ -81,6 +99,7 @@ button{
     color: white;
     font-weight: 900;
     font-size: 18px;
+    display: none;
 }
 
 #vivo:hover{
@@ -94,6 +113,7 @@ button{
     color: white;
     font-weight: 900;
     font-size: 18px;
+    display: none;
 }
 
 #morto:hover{

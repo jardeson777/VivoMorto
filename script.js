@@ -21,6 +21,9 @@ function trocaImagem() {
 }
 
 function iniciar() {
+    document.getElementById("temporizador").style.display = "none";
+    document.getElementById("vivo").style.display = "block";
+    document.getElementById("morto").style.display = "block";
     document.getElementById("comeca").style.display = "none";
     if(resposta == indice | resposta == 2) { //Se tiver acertado
         score++;
@@ -44,12 +47,35 @@ function iniciar() {
 }
 
 function paraLoop() {
-    if(cont > 3) {
-        clearInterval(iniciaLoop);
-        document.getElementById("vivo").disabled = false;
+    if(cont > 3) { //condição para imagem parar
+        clearInterval(iniciaLoop); //para o loop de troca de imagem
+
+        document.getElementById("temporizador").style.display = "block"; //mostra o temporizador
+        document.getElementById("vivo").disabled = false; //Deixa os botões de vivo e mmorto clicaveis
         document.getElementById("morto").disabled = false;
         resposta = 3;
-        iniciaLoop2 = setTimeout("iniciar()", 1000);
+
+        //Dificuldade aumentando conforme o score
+        if(score < 10) {
+            iniciaLoop2 = setTimeout("iniciar()", 2500);
+            document.getElementById("temporizador").style.animationDuration = "2.5s";
+        } else if(score > 8 & score < 16) {
+            iniciaLoop2 = setTimeout("iniciar()", 2000);
+            document.getElementById("temporizador").style.animationDuration = "2s";
+        } else if(score > 16 & score < 24) {
+            iniciaLoop2 = setTimeout("iniciar()", 1700);
+            document.getElementById("temporizador").style.animationDuration = "1.7s";
+        } else if(score > 24 & score < 32) {
+            iniciaLoop2 = setTimeout("iniciar()", 1300);
+            document.getElementById("temporizador").style.animationDuration = "1.3s";
+        } else if(score > 32 & score < 40) {
+            iniciaLoop2 = setTimeout("iniciar()", 900);
+            document.getElementById("temporizador").style.animationDuration = "0.9s";
+        } else {
+            iniciaLoop2 = setTimeout("iniciar()", 690);
+            document.getElementById("temporizador").style.animationDuration = "0.69s";
+        }
+
         cont = 0;
     }
     pararLoop = setTimeout("paraLoop()", 400);
