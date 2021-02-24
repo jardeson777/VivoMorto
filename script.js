@@ -25,6 +25,7 @@ function iniciar() {
     document.getElementById("vivo").style.display = "block";
     document.getElementById("morto").style.display = "block";
     document.getElementById("comeca").style.display = "none";
+
     if(resposta == indice | resposta == 2) { //Se tiver acertado
         score++;
         document.getElementById("score").innerHTML = "score: " + score;
@@ -36,6 +37,7 @@ function iniciar() {
         document.getElementById("perdeu").style.display = "none";
     } else { //Se errou
         document.getElementById("msgErro").innerHTML = "Você perdeu!</br>Sua pontuação foi: " + score;
+        
         score = 0;
         document.getElementById("score").innerHTML = "score: " + score;
 
